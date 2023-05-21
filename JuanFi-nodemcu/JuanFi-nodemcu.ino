@@ -113,7 +113,8 @@ const int BACKUP_CONFIG_LENGTH_INDEX = 20;
 void ICACHE_RAM_ATTR coinInserted()    
 {
   if(coinSlotActive){
-    coin = coin + 1;  
+    coin = coin + 1;
+    if(coin >= 1){ coin = 1; } //// for use buttom pulse and recive 1 pulse 1 coin
     coinsChange = 1;
   }
 }
